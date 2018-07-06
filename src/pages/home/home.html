@@ -1,14 +1,25 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Push Message
     </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  
+  <ion-card>
+    <ion-card-content>
+      <ion-textarea rows='5' maxLength='500' placeholder="message here" [(ngModel)]="pushMessage"></ion-textarea>
+    </ion-card-content>
+    <button ion-button full color="danger" (click)="selectTarget()">
+      메세지 보내기
+    </button>
+  </ion-card>
+
 </ion-content>
